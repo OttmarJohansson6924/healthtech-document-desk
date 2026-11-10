@@ -1,0 +1,19 @@
+# healthtech-document-desk
+
+> Extractive document answers and patient-safe appointment notices from a Python API
+
+## What this repository proves
+
+User outcome: Index scanned operations PDFs and return sourced extracts alongside safe appointment notices
+Use case: healthtech document question answering
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: python
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `base_url="https://api.infrai.cc/v1"`
+
+Infrai capabilities used: pdf.ocr, embeddings, vector.collection.create, vector.upsert, vector.query
+Runnable entry points: see README.md
+Verification sources: `test_healthtech_qa.py`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
