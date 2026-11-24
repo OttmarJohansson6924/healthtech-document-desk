@@ -1,7 +1,6 @@
 """Document search and appointment-safe operational notices."""
 
 import base64
-import argparse
 import os
 import time
 import uuid
@@ -137,23 +136,5 @@ def ask(question: Question):
             "sources": sources}
 
 
-def setup_collection():
-    return api("POST", "/v1/vector/collection/create",
-               {"collection": COLLECTION, "dimension": DIMENSION, "metric": "cosine"})
-
-
-def cleanup_collection():
-    return api("DELETE", "/v1/vector/collection/delete", {"collection": COLLECTION})
-
-
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--cleanup", action="store_true",
-                        help="Delete the collection and all indexed documents after use")
-    args = parser.parse_args()
-    if args.cleanup:
-        cleanup_collection()
-        print(f"Collection {COLLECTION} deleted")
-    else:
-        setup_collection()
-        print(f"Collection {COLLECTION} is ready")
+    print(f"Healthtech document desk is ready; use pre-provisioned collection {COLLECTION}")
